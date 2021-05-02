@@ -35,11 +35,11 @@ function setup() {
 
   //creating the feed and addFoods button
   feed=createButton("Feed the Dog");
-  feed.position(880,95);
+  feed.position(1050,96);
   feed.mousePressed(feedDog);
 
   addFood=createButton("Add Food");
-  addFood.position(800,95);
+  addFood.position(970,96);
   addFood.mousePressed(addFoods);
 
   
@@ -63,19 +63,25 @@ function draw() {
   })
 
   //writing code to display text lastFed time according to am, pm
-  if(lastFed>=12){
-    fill("white")
-    textSize(20)
-    text("Last Feed : " + lastFed + " PM", 420, 30);
+  fill("white");
+  textSize(20);
+
+  if(lastFed >= 12){
+
+    text("Last Feed : " + lastFed + " PM", 50, 30);
+
   }else if(lastFed == 0){
-    fill("white")
-    textSize(20)
-    text("Last Feed : 12 AM", 420, 30);
-  }else{
-    fill("white")
-    textSize(20)
-    text("Last Feed : " + lastFed + " AM", 420, 30);
+
+    text("Last Feed : 12 AM", 50, 30);
+
+  }else if(lastFed < 12){
     
+    text("Last Feed : " + lastFed + " AM", 50, 30);
+
+  }else{
+
+    text(lastFed, 50, 30);
+
   }
 
   //drawing the sprites
